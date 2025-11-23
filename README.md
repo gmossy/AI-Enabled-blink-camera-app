@@ -24,7 +24,7 @@ A web application to manage Blink security cameras in your home.
 ## Setup
 
 ### Prerequisites
-- Python 3.11.9 (managed via pyenv)
+- Python 3.11.9 (managed via pyenv). Only use 3.11.9 for now due to dependency issues with blinkpy
 - Node.js and npm
 - Blink camera account
 
