@@ -1,13 +1,78 @@
 .env
-.env
 # Python cache and build artifacts
+# Python
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
+*.sqlite3
+*.egg-info/
+*.egg
+*.dist-info/
+*.manifest
+*.spec
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+# Test artifacts
 .pytest_cache/
 .coverage
 htmlcov/
-*.egg-info/
-dist/
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+# OS files
+.DS_Store
+.AppleDouble/
+.LSOverride
+._*
+.Spotlight-V100/
+.Trashes/
+.fseventsd/
+.TemporaryItems/
+# Node / frontend
+node_modules/
 build/
+# Environment files
+.env.local
+.env.development
+.env.test
+.env.production
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.egg-info/
+*.egg
+*.dist-info/
+*.manifest
+*.spec
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+# OS files
+.DS_Store
+# Node / frontend
+node_modules/
+build/
+# Environment files
+.env.local
+.env.development
+.env.test
+.env.production
+blink_login_test.py
