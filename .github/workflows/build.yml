@@ -1,0 +1,42 @@
+name: Build EXE for Daughter
+
+# This allows you to run the build manually from the Actions tab
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11.9' # Uses a stable recent version of Python
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # Installs the tools needed to make the EXE
+        pip install pyinstaller
+        # Installs the app's specific requirements if the file exists
+        if (Test-Path requirements.txt) { pip install -r requirements.txt }
+
+    - name: Build EXE
+      # REPLACE 'main.py' BELOW WITH THE NAME OF YOUR MAIN PYTHON SCRIPT
+      env:
+        SCRIPT_NAME: app.py 
+      run: |
+        # --onefile: Bundles everything into a single .exe file
+        # --windowed: Hides the black command window (remove this flag if you want to see text output)
+        # --name: Sets the output name of the file
+        pyinstaller --onefile --windowed --name "BlinkCameraApp" $env:SCRIPT_NAME
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: BlinkCameraApp-Executable
+        path: dist/*.exe
