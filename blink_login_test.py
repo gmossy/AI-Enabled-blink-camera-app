@@ -11,8 +11,16 @@ import time
 import uuid
 
 
-USERNAME = "katheimossy@yahoo.com"
-PASSWORD = "H@z3lnut3315"
+from dotenv import load_dotenv
+
+load_dotenv()
+
+USERNAME = os.getenv("BLINK_USERNAME")
+PASSWORD = os.getenv("BLINK_PASSWORD")
+
+if not USERNAME or not PASSWORD:
+    print("Error: BLINK_USERNAME and BLINK_PASSWORD must be set in .env file")
+    sys.exit(1)
 
 # Cache/token storage configuration
 CACHE_DIR = Path.home() / ".blink_cache"

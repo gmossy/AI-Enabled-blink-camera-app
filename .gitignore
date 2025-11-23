@@ -74,3 +74,4 @@ build/
 .env.development
 .env.test
 .env.production
+blink_login_test.py
