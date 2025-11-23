@@ -1,4 +1,5 @@
 .env
+# Python cache and build artifacts
 # Python
 __pycache__/
 *.py[cod]
